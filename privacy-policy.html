@@ -46,8 +46,8 @@ us.</p>
   <tr><th>What</th><th>Where it goes</th><th>Why</th></tr>
   <tr>
     <td>The text description you type for AI music generation, and the track length you choose</td>
-    <td>Our processing service (Cloudflare Workers), which forwards it to the AI model provider
-        that generates the audio (RunPod, and Stability AI where that model is used)</td>
+    <td>Our processing service (Cloudflare Workers), which forwards it to the cloud GPU service
+        where the models run (RunPod)</td>
     <td>It is the instruction the music is generated from. There is no way to generate a track
         without sending it.</td>
   </tr>
@@ -68,10 +68,10 @@ us.</p>
 
 <h2>About the AI prompt text</h2>
 <p>This is the one piece of content you author that leaves your device, so it deserves to be
-spelled out. The description you write is sent to a third-party AI provider to produce audio, and
-may appear in that provider's operational logs. Please do not put personal, confidential or
-identifying information into it — it is a description of music, and nothing else needs to be
-there.</p>
+spelled out. The description you write leaves our systems and is processed on a third-party cloud
+service (RunPod), where the audio models run, and it may appear in that service's operational
+logs. Please do not put personal, confidential or identifying information into it — it is a
+description of music, and nothing else needs to be there.</p>
 <p>We do not store your prompts on our servers beyond what is needed to pass the request through
 and return the audio. Our service keeps a per-user count of how many generations have been made,
 in order to apply the monthly allowance; it does not keep the text.</p>
