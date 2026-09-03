@@ -8,4 +8,6 @@
 #   DATA_SAFETY.md     internal notes naming code paths and files.
 #   assets/            store icon and feature graphic; Play Console holds these, not a web page.
 *.md
+# ...with one exception, which explains what this repository is.
+!README.md
 assets/
