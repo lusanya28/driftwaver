@@ -1,0 +1,11 @@
+# This repository is PUBLIC - it exists only to host the two legal pages that Play requires at a
+# stable HTTPS URL. Everything else in this directory is internal working material and stays out:
+#
+#   STORE_LISTING.md   documents which medical claims the listing deliberately avoids, and why.
+#                      Sound reasoning to keep; a poor thing to publish next to the app.
+#   RELEASE_NOTES.md   includes the draft for the build that turns on Play Integrity. Announcing
+#                      when an anti-abuse measure switches on is not useful to anyone but abusers.
+#   DATA_SAFETY.md     internal notes naming code paths and files.
+#   assets/            store icon and feature graphic; Play Console holds these, not a web page.
+*.md
+assets/
