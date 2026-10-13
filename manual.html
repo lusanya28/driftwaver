@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driftwaver — User Manual</title>
+<style>
+  body { max-width: 42rem; margin: 2rem auto; padding: 0 1rem;
+         font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; } h2 { font-size: 1.2rem; margin-top: 2.4rem; }
+  h3 { font-size: 1.02rem; margin-top: 1.6rem; }
+  code { background: #f2f2f2; padding: .1em .3em; border-radius: 3px; }
+  .updated { color: #666; font-size: .9rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: .5rem; text-align: left; vertical-align: top; font-size: .95rem; }
+  th { background: #f7f7f7; }
+  nav { background: #f7f7f7; border: 1px solid #ddd; padding: .8rem 1rem; margin: 1.5rem 0; }
+  nav ul { margin: .3rem 0; padding-left: 1.1rem; } nav li { margin: .2rem 0; }
+  .note { border-left: 3px solid #bbb; padding: .1rem 0 .1rem .9rem; margin: 1rem 0; color: #444; }
+  ul { padding-left: 1.2rem; } li { margin: .35rem 0; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #16161a; color: #e6e6e6; }
+    code { background: #26262c; } th { background: #22222a; } th, td { border-color: #33333c; }
+    nav { background: #1d1d23; border-color: #33333c; }
+    .note { border-color: #44444e; color: #b9b9c2; }
+    .updated { color: #999; } a { color: #8ab4f8; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Driftwaver — User Manual</h1>
+<p class="updated">For version 1.5 · Last updated 13 October 2026</p>
+
+<p>Driftwaver plays and generates ambient audio with <strong>binaural tones</strong> — two slightly
+different frequencies, one per ear, which is why the app keeps mentioning headphones. Without
+stereo headphones the music still plays, but the effect the app is built around does not happen.</p>
+
+<nav>
+  <strong>Contents</strong>
+  <ul>
+    <li><a href="#tabs">The three tabs</a></li>
+    <li><a href="#play">Play — the player</a></li>
+    <li><a href="#binaural">The binaural switch and its four states</a></li>
+    <li><a href="#fullscreen">Full screen</a></li>
+    <li><a href="#timer">Sleep timer and alarm clock</a></li>
+    <li><a href="#sound">Sound settings</a></li>
+    <li><a href="#create">Create — making music</a></li>
+    <li><a href="#media">My Media-tation — library and sessions</a></li>
+    <li><a href="#export">Exporting a mix</a></li>
+    <li><a href="#pro">Free use and Driftwaver Pro</a></li>
+    <li><a href="#menu">The ★ and ⋮ buttons</a></li>
+  </ul>
+</nav>
+
+<h2 id="tabs">The three tabs</h2>
+<p>Everything lives under three tabs along the bottom.</p>
+<table>
+  <tr><th>Tab</th><th>What it is for</th></tr>
+  <tr><td><strong>Play</strong></td><td>Listening. The player, the queue, the binaural switch, the sleep timer, the alarm, and the animated background.</td></tr>
+  <tr><td><strong>Create</strong></td><td>Making a new track — either on your phone for free, or with AI in the cloud.</td></tr>
+  <tr><td><strong>My Media</strong><br>(My Media-tation)</td><td>Your collection: the built-in library, tracks you have added, and sessions you have played.</td></tr>
+</table>
+
+<h2 id="play">Play — the player</h2>
+
+<h3>Now playing, and the queue</h3>
+<p>The card at the top shows what is playing and the queue beneath it. Tap any row to switch to it.
+If something is already playing and has not been exported, the app asks before replacing it, and
+offers <em>Export first</em> — that prompt exists because a mix you have not saved is gone once you
+load something else.</p>
+<p>The <strong>+</strong> button adds a track: from the built-in <em>Library</em>, from your
+<em>Exported tracks</em>, or as a <em>File from device</em>. The <strong>⋮</strong> on each row
+removes that row or clears the list. Clearing the list deletes nothing — every track stays in
+My Media-tation, and choosing it there brings it back.</p>
+
+<h3>The controls row</h3>
+<table>
+  <tr><th>Control</th><th>What it does</th></tr>
+  <tr><td><strong>Sound settings</strong> (gear with a note)</td><td>Opens the binaural settings — frequencies, volumes, pink noise. See <a href="#sound">Sound settings</a>.</td></tr>
+  <tr><td><strong>Play / Pause</strong></td><td>The round button in the middle.</td></tr>
+  <tr><td><strong>Headphones</strong></td><td>The binaural switch. It has four states — see below.</td></tr>
+</table>
+
+<h2 id="binaural">The binaural switch and its four states</h2>
+<p>This is the control most worth understanding, because it looks different depending on what the
+track already has.</p>
+<table>
+  <tr><th>Appearance</th><th>Meaning</th><th>What tapping does</th></tr>
+  <tr><td>Grey headphones, no label</td><td><strong>Tones are off.</strong> The music plays plain.</td><td>Turns tones on.</td></tr>
+  <tr><td>Gold headphones with arcs, “Binaural on”</td><td><strong>Tones are playing</strong> over the music.</td><td>Turns them off.</td></tr>
+  <tr><td>Faded, “Tap to generate”</td><td>You added this file yourself and <strong>nothing has been computed for it yet</strong>.</td><td>Asks first, then generates. Takes about half a minute and restarts the track.</td></tr>
+  <tr><td>Locked, “Already in this track”</td><td>The tones are <strong>already inside the audio</strong> — usually an export you re-imported.</td><td>Nothing. Adding a second set would beat against the first.</td></tr>
+</table>
+<div class="note">
+<p>When the switch says <em>Tap to generate</em>, <strong>Export mix</strong> is greyed out too.
+That is deliberate: until the waves exist there is no mix to export, and exporting anyway would
+produce a file with a flat tone that ignores the music. Generating re-opens both.</p>
+</div>
+
+<h2 id="fullscreen">Full screen</h2>
+<p>The animated space below the player is not decoration you are stuck with.</p>
+<ul>
+  <li><strong>Swipe in the upper area</strong> to change the drifting objects.</li>
+  <li><strong>Swipe in the lower area</strong> to change the background.</li>
+  <li>The <strong>four-arrows button</strong> at the lower right opens full screen.</li>
+</ul>
+<p>In full screen the animation fills the display with nothing on top of it. <strong>Tap once</strong>
+and the controls fade in: previous track, play/pause, next track, and the exit button at the lower
+right. They fade out again on their own, so the view returns to being just the animation. The two
+swipe areas work here as well.</p>
+
+<h2 id="timer">Sleep timer and alarm clock</h2>
+<h3>Sleep timer</h3>
+<p>The clock-and-gear icon. Choose 5, 10, 15, 30, 45 or 60 minutes and playback stops when it runs
+out. It reads <em>Off</em> when nothing is set, and shows the remaining time while it counts down.</p>
+
+<h3>Alarm clock</h3>
+<p>The alarm icon opens a full screen with four parts:</p>
+<ul>
+  <li><strong>Hour and Minute</strong> wheels.</li>
+  <li><strong>Repeat</strong> — pick days of the week. Pick none and it rings once, then turns itself off.</li>
+  <li><strong>Wake to</strong> — choose a track. Choose nothing and the alarm follows whatever is loaded.</li>
+  <li><strong>Wake-up binaural</strong> — a rising sweep from delta to alpha, 2 to 10 Hz, intended to bring you up gently rather than jolt you.</li>
+</ul>
+<p>Android requires its own permission for exact alarms. The app asks once; without it an alarm
+would be saved but never ring.</p>
+
+<h2 id="sound">Sound settings</h2>
+<p>Reached from the gear on the Play tab, or from the ⋮ menu.</p>
+<table>
+  <tr><th>Setting</th><th>What it means</th></tr>
+  <tr><td><strong>Entrainment goal</strong></td><td>A preset such as <em>Fall Asleep: Theta → Delta (6 → 2 Hz)</em>. This is the beat frequency and the direction it moves in over the session. <em>Direction</em> underneath restates it in plain numbers.</td></tr>
+  <tr><td><strong>Save current as preset</strong></td><td>Keeps your own combination under a name.</td></tr>
+  <tr><td><strong>Tone volume</strong> (start / end)</td><td>How loud the binaural tone is at the beginning and at the end. Two values, because the session moves between them.</td></tr>
+  <tr><td><strong>Music volume</strong> (start / end)</td><td>The same for the music underneath.</td></tr>
+  <tr><td><strong>Pink noise</strong></td><td>Adds a soft wash of noise.</td></tr>
+  <tr><td><strong>Show advanced settings</strong></td><td>Carrier frequency, semitone jump threshold, ramp smoothing and similar. Safe to ignore.</td></tr>
+</table>
+
+<h2 id="create">Create — making music</h2>
+<p>Two methods, chosen by the toggle at the top.</p>
+
+<h3>Local synthesis — free, offline, unlimited</h3>
+<p>Runs entirely on your phone. Nothing is sent anywhere and it costs nothing. Two modes:</p>
+<ul>
+  <li><strong>Composer</strong> — pick a <em>Preset</em> (Ethereal, Deep Sleep, Warm Ambient and so on), optionally write a <em>Prompt</em> describing the music in words, set a <em>Duration</em>, and press <strong>Generate</strong>. <em>New Variation</em> produces a different piece from the same description.</li>
+  <li><strong>Sliders</strong> — the same engine with the musical parameters exposed directly.</li>
+</ul>
+<p>The app estimates how long it will take on <em>your</em> phone, and learns from how long previous
+renders actually took. Replaying a session you have made before is immediate — it is kept, not
+rebuilt.</p>
+
+<h3>AI generation — Pro, uses the cloud</h3>
+<p>Sends your description to a cloud service that runs the music models. Choose a voice —
+<strong>AI-Aster</strong>, <strong>AI-Elmi</strong> or <strong>AI-Lika</strong> — write a
+description, set a duration, and press <strong>Generate Music</strong>. The line underneath shows
+what is left of your monthly allowance, for example <em>99 tracks or 117 min left this period</em>.</p>
+
+<h3>Options shared by both</h3>
+<ul>
+  <li><strong>Cover with binaural tones</strong> — on, the track is made with tones already mixed in; off, it is a plain meditation track.</li>
+  <li><strong>Track name</strong> — names the saved file and the session in the Play tab. Left blank, the description or preset is used.</li>
+  <li><strong>Save prompt as… / Saved prompts</strong> — keep a description you like and reuse it.</li>
+</ul>
+<p>Generated files are saved to <code>Downloads/Driftwaver</code> on your phone.</p>
+
+<h2 id="media">My Media-tation — library and sessions</h2>
+<h3>Library</h3>
+<p>The built-in catalogue. Each track shows its style and length, and whether it is on your phone:</p>
+<ul>
+  <li><strong>✓ Included offline</strong> — shipped with the app, plays immediately.</li>
+  <li><strong>☁ Cloud · 9.1 MB</strong> — available to <strong>Download</strong> first.</li>
+</ul>
+<h3>Sessions</h3>
+<p>What you have played, newest first, each labelled with where it came from —
+<em>Library</em>, <em>From device</em> — and when. This is also where files you add from your phone
+live.</p>
+
+<h2 id="export">Exporting a mix</h2>
+<p><strong>Export mix</strong> appears on the Play tab once a track is loaded. It renders the music
+and the binaural tones together into one <code>.m4a</code> file you can keep, share or use
+elsewhere, with your current sound settings baked in. A different entrainment goal gives a
+genuinely different file, so exporting the same track twice is a reasonable thing to do.</p>
+<p>The button is greyed out when there is no mix to make: a track that already contains tones, or
+one whose waves have not been generated yet.</p>
+
+<h2 id="pro">Free use and Driftwaver Pro</h2>
+<p>Most of the app is free and stays free: the whole library, binaural tones, local synthesis,
+your own files, the alarm and the sleep timer.</p>
+<p>Free use includes a limited number of exports and of binaural analyses for your own tracks, and
+a selection of the animated objects and backgrounds. <strong>Driftwaver Pro</strong> is a monthly
+subscription that adds AI generation — up to 120 minutes and 100 generations a month — and the rest
+of the artwork. It renews automatically until cancelled, and you cancel in Google Play.</p>
+<p><em>Restore subscription</em> on the Pro screen recovers an existing subscription on a new phone
+or after reinstalling.</p>
+
+<h2 id="menu">The ★ and ⋮ buttons</h2>
+<ul>
+  <li><strong>★</strong> opens Driftwaver Pro.</li>
+  <li><strong>⋮</strong> holds <em>Sound settings</em>, <em>Driftwaver Pro</em>, <em>About app</em> and <em>Language</em>. The app is available in English, Ukrainian, Bulgarian, German, French, Spanish and Polish.</li>
+</ul>
+
+<h2>Safety</h2>
+<p>Driftwaver is a relaxation and focus aid. It is not a medical device, and it does not diagnose,
+treat, cure or prevent any condition. If you have epilepsy, a seizure disorder or a pacemaker, or
+you are pregnant, speak to a doctor before using rhythmic audio. Do not listen while driving or
+operating machinery. Stop if you feel unwell.</p>
+
+<p>Questions or problems: <a href="mailto:magic4pay@gmail.com">magic4pay@gmail.com</a> ·
+<a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-use.html">Terms of Use</a></p>
+
+</body>
+</html>
